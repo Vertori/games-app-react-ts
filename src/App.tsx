@@ -8,7 +8,11 @@ function App() {
   const { theme, setTheme } = useContext(ThemeContext);
 
   return (
-    <div className={`${theme} ${theme == "dark" ? "bg-[#121212]" : null}`}>
+    <div
+      className={`${theme} ${
+        theme == "dark" ? "bg-[#121212]" : null
+      } min-h-[100vh]`}
+    >
       <Header />
       <Home />
     </div>

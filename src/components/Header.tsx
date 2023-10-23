@@ -1,10 +1,19 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import logo from "./../assets/images/logo.png";
 import { HiOutlineMagnifyingGlass, HiMoon, HiSun } from "react-icons/hi2";
 import { ThemeContext } from "../context/ThemeContext";
 
 const Header = () => {
   const { theme, setTheme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme !== null) {
+      setTheme(storedTheme);
+    } else {
+      setTheme("dark");
+    }
+  }, []);
 
   return (
     <div className="flex items-center p-3">
@@ -23,12 +32,18 @@ const Header = () => {
         {theme == "light" ? (
           <HiMoon
             className="text-[35px] bg-slate-200 text-black p-1 rounded-full cursor-pointer"
-            onClick={() => setTheme("dark")}
+            onClick={() => {
+              setTheme("dark");
+              localStorage.setItem("theme", "dark");
+            }}
           />
         ) : (
           <HiSun
             className="text-[35px] bg-slate-200 text-black p-1 rounded-full cursor-pointer"
-            onClick={() => setTheme("light")}
+            onClick={() => {
+              setTheme("light");
+              localStorage.setItem("theme", "light");
+            }}
           />
         )}
       </div>
