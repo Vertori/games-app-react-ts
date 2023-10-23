@@ -12,7 +12,10 @@ const TrendingGames = ({ gamesList }: Props) => {
         {gamesList.map(
           (item, index) =>
             index < 4 && (
-              <div className="bg-[#76a8f75e] rounded-lg group hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+              <div
+                className="bg-[#76a8f75e] rounded-lg group hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer"
+                key={index}
+              >
                 <img
                   src={item.background_image}
                   alt={item.name}

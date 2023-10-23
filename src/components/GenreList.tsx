@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import GlobalApi from "../services/GlobalApi";
 import { GameCategory } from "../types";
 
-const GenreList = () => {
+type Props = {
+  selectGenreId: (genreId: number) => void;
+};
+
+const GenreList = ({ selectGenreId }: Props) => {
   const [genreList, setGenreList] = useState<GameCategory[]>([]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -21,7 +25,10 @@ const GenreList = () => {
       <h2 className="text-[30px] font-bold dark:text-white">Categories</h2>
       {genreList.map((item, index) => (
         <div
-          onClick={() => setActiveIndex(index)}
+          onClick={() => {
+            setActiveIndex(index);
+            selectGenreId(item.id);
+          }}
           key={index}
           className={`flex gap-2 items-center mb-2 cursor-pointer hover:bg-gray-300 p-2 rounded-lg hover:dark:bg-gray-600 group ${
             activeIndex == index ? "bg-gray-300 dark:bg-gray-600" : null
