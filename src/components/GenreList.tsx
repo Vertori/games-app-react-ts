@@ -4,9 +4,10 @@ import { GameCategory } from "../types";
 
 type Props = {
   selectGenreId: (genreId: number) => void;
+  setCategoryName: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const GenreList = ({ selectGenreId }: Props) => {
+const GenreList = ({ selectGenreId, setCategoryName }: Props) => {
   const [genreList, setGenreList] = useState<GameCategory[]>([]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -28,6 +29,7 @@ const GenreList = ({ selectGenreId }: Props) => {
           onClick={() => {
             setActiveIndex(index);
             selectGenreId(item.id);
+            setCategoryName(item.name);
           }}
           key={index}
           className={`flex gap-2 items-center mb-2 cursor-pointer hover:bg-gray-300 p-2 rounded-lg hover:dark:bg-gray-600 group ${
