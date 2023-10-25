@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-tabs {
+  margin-top: 48px;
+}
+
+.react-tabs__tab {
+  border-radius: 0;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  padding: 8px 16px;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+.dark .react-tabs__tab {
+  color: white;
+}
+
+.dark .react-tabs__tab--selected {
+  color: black;
+}
+
+.react-tabs__tab--selected {
+  color: black;
+  font-weight: 700;
+}
+
+.react-tabs__tab:after {
+  display: none;
+}
+
+.react-tabs__tab-panel {
+  padding: 16px 0;
+}
+
+@media screen and (min-width: 992px) {
+  .react-tabs__tab {
+    font-size: 18px;
+    padding: 10px 32px;
+    display: inline-block;
+  }
+
+  .platforms-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}

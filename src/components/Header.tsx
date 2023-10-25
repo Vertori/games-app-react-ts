@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logo from "./../assets/images/logo.png";
 import { HiOutlineMagnifyingGlass, HiMoon, HiSun } from "react-icons/hi2";
 import { ThemeContext } from "../context/ThemeContext";
@@ -18,7 +19,9 @@ const Header = () => {
   return (
     <div className="flex items-center p-3">
       {/* Logo  */}
-      <img src={logo} alt="logo" width={100} height={100} />
+      <Link to="/">
+        <img src={logo} alt="logo" width={100} height={100} />
+      </Link>
       {/* Searchbar  */}
       <div className="flex bg-slate-200 p-2 w-full items-center mx-5 rounded-full">
         <HiOutlineMagnifyingGlass />

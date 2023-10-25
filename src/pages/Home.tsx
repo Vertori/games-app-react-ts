@@ -27,7 +27,6 @@ const Home = () => {
 
   // GET ALL GAMES BY SELECTED CATEGORY
   const getGameListByGenresId = (id: number) => {
-    console.log(id);
     GlobalApi.getGameListByGenreId(id).then((response) => {
       setGameListByGenres(response.data.results);
     });

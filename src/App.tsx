@@ -4,7 +4,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import { ThemeContext } from "./context/ThemeContext";
-import GameDetails from "./pages/GameDetails";
+import GameDetailsPage from "./pages/GameDetails";
 
 function App() {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -18,11 +18,10 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/details" element={<GameDetails />}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/details/:id" element={<GameDetailsPage />} />
         </Routes>
       </Router>
-      
     </div>
   );
 }
