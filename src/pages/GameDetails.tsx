@@ -32,12 +32,13 @@ const GameDetailsPage = () => {
     (publisher) => publisher.name
   );
 
+  // Fetch data on route id change
   useEffect(() => {
     if (id) {
       const gameId = Number(id);
       getClickedGameDetails(gameId);
     }
-  }, []);
+  }, [id]);
 
   const getClickedGameDetails = (id: number) => {
     GlobalApi.getGameByItsId(id).then((response) => {

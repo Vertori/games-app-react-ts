@@ -26,10 +26,9 @@ const Header = () => {
   };
 
   const onOptionSelect = (option: OptionGame) => {
-    const idOfSelectedGame = option.id;
     setOptions([]);
     setTerm("");
-    navigate(`/details/${idOfSelectedGame}`);
+    navigate(`/details/${option.id}`);
   };
 
   useEffect(() => {
