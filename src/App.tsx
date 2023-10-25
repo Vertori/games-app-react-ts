@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import { ThemeContext } from "./context/ThemeContext";
 import GameDetailsPage from "./pages/GameDetails";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -16,6 +17,7 @@ function App() {
       } min-h-[100vh]`}
     >
       <Router>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

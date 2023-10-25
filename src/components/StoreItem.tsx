@@ -7,7 +7,7 @@ type Props = {
 const StoreItem = ({ storeItem }: Props) => {
   console.log(storeItem);
   return (
-    <div className="grid grid-cols-2 min-h-[120px] gap-4 my-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 min-h-[120px] gap-4 my-4 py-2">
       <div className="h-[180px]">
         <img
           src={storeItem?.image_background}
