@@ -7,11 +7,11 @@ import { ThemeContext } from "./context/ThemeContext";
 import GameDetailsPage from "./pages/GameDetails";
 
 function App() {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div
-      className={`${theme} ${
+      className={`theme-transition ${theme} ${
         theme == "dark" ? "bg-[#121212]" : null
       } min-h-[100vh]`}
     >

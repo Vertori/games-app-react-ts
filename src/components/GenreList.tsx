@@ -23,7 +23,7 @@ const GenreList = ({ selectGenreId, setCategoryName }: Props) => {
 
   return (
     <div>
-      <h2 className="text-[30px] font-bold dark:text-white">Categories</h2>
+      <h2 className="text-[30px] font-bold dark:text-white mb-3">Categories</h2>
       {genreList.map((item, index) => (
         <div
           onClick={() => {

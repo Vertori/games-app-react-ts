@@ -41,13 +41,12 @@ const GameDetailsPage = () => {
 
   const getClickedGameDetails = (id: number) => {
     GlobalApi.getGameByItsId(id).then((response) => {
-      console.log(response.data);
       setSelectedGameDetails(response.data);
     });
   };
 
   return (
-    <div className="py-[32px] px-[28px] mt-32px">
+    <div className="py-[32px] px-[28px] mt-32px theme-transition ">
       <div className="mb-[36px]">
         <h3 className="text-[28px] tracking-wider text-blue-800 dark:text-yellow-300 uppercase ">
           {selectedGameDetails?.name}
@@ -56,10 +55,11 @@ const GameDetailsPage = () => {
       {/* Details Container  */}
       <div className="grid lg:grid-cols-2 gap-[32px] items-stretch">
         {/* Details Left  */}
-        <div className=" object-cover">
+        <div className="max-h-[800px]">
           <img
             src={selectedGameDetails?.background_image}
             alt={selectedGameDetails?.name}
+            className="w-full h-full object-cover"
           />
         </div>
         {/* Details right  */}

@@ -14,10 +14,14 @@ const getGameListByGenreId = (id: number) => {
 const getGameByItsId = (id: number) => {
   return axiosInstance.get(`/games/${id}?key=${key}`);
 };
+const getGameByItsName = (name: string) => {
+  return axiosInstance.get(`/games?key=${key}&search=${name}`);
+};
 
 export default {
   getGenreList,
   getAllGames,
   getGameListByGenreId,
   getGameByItsId,
+  getGameByItsName,
 };

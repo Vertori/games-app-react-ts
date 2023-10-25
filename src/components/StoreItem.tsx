@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { GameStore } from "../types";
 
 type Props = {

@@ -19,7 +19,7 @@ const GamesByGenreId = ({ gamesList, selectedCategory }: Props) => {
               <img
                 src={game.background_image}
                 alt={game.name}
-                className="w-full h-[80%] rounded-xl object-cover "
+                className="w-full h-[300px] rounded-xl object-cover "
               />
               <h2 className="text-[20px] dark:text-white font-bold py-1">
                 {game.name}

@@ -1,4 +1,5 @@
 import { GameDetails } from "../types";
+import { Link } from "react-router-dom";
 
 type Props = {
   gamesList: GameDetails[];
@@ -12,19 +13,18 @@ const TrendingGames = ({ gamesList }: Props) => {
         {gamesList.map(
           (item, index) =>
             index < 4 && (
-              <div
-                className="bg-[#76a8f75e] rounded-lg group hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer"
-                key={index}
-              >
-                <img
-                  src={item.background_image}
-                  alt={item.name}
-                  className="h-[270px] rounded-t-lg object-cover"
-                />
-                <h2 className="dark:text-white text-[20px] font-bold p-2">
-                  {item.name}
-                </h2>
-              </div>
+              <Link to={`/details/${item.id}`} key={index}>
+                <div className="bg-[#76a8f75e] rounded-lg group hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer h-full">
+                  <img
+                    src={item.background_image}
+                    alt={item.name}
+                    className="h-[270px] rounded-t-lg object-cover"
+                  />
+                  <h2 className="dark:text-white text-[20px] font-bold p-2">
+                    {item.name}
+                  </h2>
+                </div>
+              </Link>
             )
         )}
       </div>
